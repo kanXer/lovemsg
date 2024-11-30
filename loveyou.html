@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>प्यार भरा संदेश</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: url('https://images.pexels.com/photos/697259/pexels-photo-697259.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            overflow: hidden;
+        }
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .container {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #ffb6c1;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #ffdde1;
+            margin-bottom: 20px;
+        }
+        .message-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            margin: 20px auto;
+            width: 90%;
+            color: #333;
+        }
+        .message-box:hover {
+            background-color: #ffe4e1;
+            transform: scale(1.03);
+            transition: all 0.3s ease;
+        }
+        .message {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin: 0;
+        }
+        .button {
+            background-color: #ff69b4;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #ff1493;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #ffdde1;
+        }
+
+        /* Flowers Animation */
+        .flower {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-image: url('https://source.unsplash.com/40x40/?rose,flower');
+            background-size: cover;
+            animation: float 10s infinite;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        .flower:nth-child(1) {
+            left: 15%;
+            animation-delay: 1s;
+        }
+        .flower:nth-child(2) {
+            left: 35%;
+            animation-delay: 3s;
+        }
+        .flower:nth-child(3) {
+            left: 55%;
+            animation-delay: 5s;
+        }
+        .flower:nth-child(4) {
+            left: 75%;
+            animation-delay: 7s;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <!-- Floating Flowers -->
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>प्यार भरा संदेश 🌹</h1>
+        <h2>3 साल का सफर, एक प्यारी कहानी</h2>
+
+        <!-- Individual Message Boxes -->
+    <!--    <div class="message-box">
+            <p class="message">"जब से तुम मेरी ज़िंदगी में आए हो, सब कुछ बदल गया है। तुम मेरी खुशी और मेरी दुनिया हो।"</p>
+        </div>
+        <div class="message-box">
+            <p class="message">"तुम्हारे साथ बिताया हर पल मेरी ज़िंदगी के सबसे खूबसूरत पलों में से एक है।"</p>
+        </div>
+        <div class="message-box">
+            <p class="message">"प्यार वो है जो शब्दों से नहीं, दिल से महसूस किया जाता है। तुम मेरे दिल की धड़कन हो।"</p>
+        </div>
+        <div class="message-box">
+            <p class="message">"तुम्हारे बिना ज़िंदगी अधूरी लगती है। तुम ही मेरी जान हो।"</p>
+        </div>-->
+
+        <!-- Button to Show All Messages -->
+        <button class="button" onclick="showAllMessages()">सभी संदेश देखें</button>
+
+        <!-- All Messages Box (Hidden by Default) -->
+        <div id="allMessages" class="message-box" style="display: none;">
+            <p class="message">"जब से तुम मेरी ज़िंदगी में आए हो, सब कुछ बदल गया है। तुम मेरी खुशी और मेरी दुनिया हो।"</p>
+            <p class="message">"तुम्हारे साथ बिताया हर पल मेरी ज़िंदगी के सबसे खूबसूरत पलों में से एक है।"</p>
+            <p class="message">"प्यार वो है जो शब्दों से नहीं, दिल से महसूस किया जाता है। तुम मेरे दिल की धड़कन हो।"</p>
+            <p class="message">"तुम्हारे बिना ज़िंदगी अधूरी लगती है। तुम ही मेरी जान हो।"</p>
+            <p class="message">"अगर हम साथ नहीं हैं, तो भी कोई बात नहीं। मेरी दुआएं और प्यार हमेशा तुम्हारे साथ रहेंगे। तुम्हारी खुशी में ही मेरी खुशी है।"</p>
+        </div>
+
+        <div class="footer">
+            <p>हमेशा तुम्हारा, दिल से ❤️</p>
+            <p>🌹 Sahil Srivastava 🌹</p>
+        </div>
+    </div>
+
+    <script>
+        function showAllMessages() {
+            const allMessages = document.getElementById('allMessages');
+            allMessages.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
